@@ -1,7 +1,7 @@
 class CLI
 require 'rainbow'
-require_relative './repeat_repeat.rb'
-extend RepeatRepeat
+require_relative './animations.rb'
+extend Animations
   # this CLI (Command Line Interface) class contains the user input/output methods
   def self.list_restaurants
     puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").blue
@@ -32,20 +32,23 @@ extend RepeatRepeat
    @@restaurant
  end
  def self.get_restaurant_details(restaurant)
+   raining(1, 1)
    puts ""
-   puts "≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ ۞֎֍҉҈ #{restaurant.name} ۞֎֍҉҈ ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡".colorize(:color => :cyan)  #, :background => :blue)
-   puts "Name: #{restaurant.name}"
-   puts "Address: #{restaurant.formatted_address}"
-   puts "Opening Hours: #{restaurant.opening_hours}"
-   puts "Rating: #{restaurant.rating}"
-   puts "User Ratings Total: #{restaurant.user_ratings_total}"
+   puts Rainbow("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ 🍙🍱🍚🍣 #{restaurant.name} 🍜🍛🍥🍘 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡").purple #, :background => :blue)
+   puts Rainbow("Name: #{restaurant.name}""                                                       ─▄───────▄█▄───────▄─").gold
+   puts Rainbow("Address: #{restaurant.formatted_address}"" ▐█▌──▄──█████──▄──▐█▌").gold
+   puts Rainbow("Opening Hours: #{restaurant.opening_hours}                                  ""─█──███▄▄███▄▄███──█─").gold
+   puts Rainbow("Rating: #{restaurant.rating}                                                        ""░█░░█▄█▄█▀▒▀█▄█▄█░░█░").gold
+   puts Rainbow("User Ratings Total: #{restaurant.user_ratings_total}                                            ""██▄▄█▄█▄█▒▒▒█▄█▄█▄▄██").gold
    self.user_options
  end
  def self.user_options
-   curtains(2, 1)
-     puts "Please type 'exit' followed by ENTER if you would like to exit the restaurant program." # give the user the option of exiting the program
-     puts " "
-     puts "Otherwise, you may type 'next' followed by ENTER to choose a restaurant from the shelf." # give the user an option to choose another restaurant
+   raining(1, 1)
+    puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").magenta  #, :background => :green) # line for spacing aesthetics
+    puts Rainbow("║   Please type 'exit' followed by ENTER if you would like to exit the restaurant program     ║").magenta
+    puts Rainbow("║                                                                                             ║").magenta
+    puts Rainbow("║   Otherwise, you may type 'next' followed by ENTER to choose a restaurant from the list     ║").magenta
+    puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").magenta
    input = gets.chomp
    if input == "exit"
      self.leave_restaurant_shelf
@@ -60,25 +63,25 @@ extend RepeatRepeat
    end
  end
  def self.leave_restaurant_shelf
-   curtains(6, 0.75)
+   raining(6, 0.75)
    puts " "
-   puts Rainbow("                     Thank you for perusing my favorite japanese restaurants!").green
+   puts Rainbow("                     Thank you for coming to my favorite japanese restaurants!").green
    puts " "
-   curtains(6, 0.75)
+   raining(6, 0.75)
    exit
  end
  def self.mystery
    # should be triggered by pressing 4-10 when prompted to input 2 or 11 for exit or choose again
-   curtains(5, 1)
+   kitchen(3, 1)
    puts Rainbow("        0:  Why are you in the kitchen?! :O").red
-   curtains(4, 1)
+   raining(4, 1)
    puts Rainbow("       You better get out of here! ").red
-   curtains(4, 1)
+   raining(4, 1)
    puts Rainbow(          "Go back to looking for japanese restaurants!").red
  end
  def self.wrong_selection
    # if input = 11..# anything not 2 or 3 - and above 10 and symbols and letters etc
-    #  curtains(2, 0.75)
+    #  raining(2, 0.75)
      puts " "
      puts Rainbow("                      you made an invalid selection, sorry try again                 ").blue
      puts " "
