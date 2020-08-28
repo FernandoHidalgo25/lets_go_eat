@@ -44,7 +44,7 @@ class CLI
 
    self.user_options
  end
-   name, :formatted_address, :opening_hours, :rating, :user_ratings_total
+   :name, :formatted_address, :opening_hours, :rating, :user_ratings_total
  def self.user_options
    curtains(2, 1)
      puts "Please type exit followed by ENTER if you would like to exit the restaurant program." # give the user the option of exiting the program
