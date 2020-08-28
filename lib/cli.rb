@@ -4,21 +4,21 @@ require_relative './repeat_repeat.rb'
 extend RepeatRepeat
   # this CLI (Command Line Interface) class contains the user input/output methods
   def self.list_restaurants
-    puts Rainbow("^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^").blue
-    puts Rainbow("                                      ようこそ!                                                 ").blue
-    puts Rainbow("vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv").blue
+    puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").blue
+    puts Rainbow("║                                      ようこそ!                                              ║").blue
+    puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").blue
     Restaurants.all.each_with_index do |restaurant, n| # and outputs an indexed list of my restaurantshelf restaurant titles
-      puts "#{n + 1}. #{restaurant.name}"
+      puts Rainbow("#{n + 1}. #{restaurant.name}").green
     end
         self.choose_a_restaurant # calls the chose_a_restaurant class method from the CLI class
   end
   # this class method requests the user input a number to select a restaurant title in order to
  def self.choose_a_restaurant # see more details about the restaurants on the restaurantshelf
-   puts Rainbow("^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^     ^^^^^").magenta  #, :background => :green) # line for spacing aesthetics
-   puts Rainbow("About which restaurant would you like information?").magenta
-   puts " "
-   puts Rainbow("Please select a restaurant by typing the corresponding number followed by ENTER.").magenta
-   puts Rainbow("vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv     vvvvv").magenta #, :background => :green) # line for spacing aesthetics
+    puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").magenta  #, :background => :green) # line for spacing aesthetics
+    puts Rainbow("║               About which restaurant would you like information?                            ║").magenta
+    puts Rainbow("║                                                                                             ║").magenta
+    puts Rainbow("║       Please select a restaurant by typing the corresponding number followed by ENTER.      ║").magenta
+    puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").magenta #, :background => :green) # line for spacing aesthetics
    input = gets.chomp.to_i - 1 # user input is requested and the user input is turned into an integer for indexing purposes
    if input < 0 || input > 9 # user input is outside of the range of the index of my restaurantshelf, it tells the user they made the wrong selection
      self.wrong_selection
@@ -27,12 +27,13 @@ extend RepeatRepeat
      @@restaurant = restaurant
      self.get_restaurant_details(self.restaurant)
  end
+
  def self.restaurant
    @@restaurant
  end
  def self.get_restaurant_details(restaurant)
    puts ""
-   puts "___________________________--_-- #{restaurant.name} --_--___________________________".colorize(:color => :cyan)  #, :background => :blue)
+   puts "≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ ۞֎֍҉҈ #{restaurant.name} ۞֎֍҉҈ ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡".colorize(:color => :cyan)  #, :background => :blue)
    puts "Name: #{restaurant.name}"
    puts "Address: #{restaurant.formatted_address}"
    puts "Opening Hours: #{restaurant.opening_hours}"

@@ -4,12 +4,14 @@ module RepeatRepeat
 
     def curtains(n, a)
         while n > 0
-          puts Rainbow("      o          o          o               o o o               ").yellow
-          puts Rainbow("      o o o        o o o      o o o o          o                ").yellow
-          puts Rainbow("      o                           o         o o o o o           ").yellow
-          puts Rainbow("      o          o o o o                          o       o o   ").yellow
-          puts Rainbow("    o o o o            o       o                o       o     o ").yellow
-          puts Rainbow("    o o     o      o o        o o o o           o o o     o o   ").yellow
+          puts Rainbow("╔═════════════════════════════════════════════════════════════════╗").yellow
+          puts Rainbow("║      o          o          o               o o o                ║").yellow
+          puts Rainbow("║      o o o        o o o      o o o o          o                 ║").yellow
+          puts Rainbow("║      o                           o         o o o o o            ║").yellow
+          puts Rainbow("║      o          o o o o                          o       o o    ║").yellow
+          puts Rainbow("║    o o o o            o       o                o       o     o  ║").yellow
+          puts Rainbow("║    o o     o      o o        o o o o           o o o     o o    ║").yellow
+          puts Rainbow("╚═════════════════════════════════════════════════════════════════╝").yellow
           n -= 1
           sleep(a)
         end
