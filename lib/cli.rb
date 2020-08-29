@@ -34,16 +34,21 @@ extend Animations
  def self.get_restaurant_details(restaurant)
    raining(1, 1)
    puts ""
-   puts Rainbow("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ 🍙🍱🍚🍣 #{restaurant.name} 🍜🍛🍥🍘 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡").purple #, :background => :blue)
-   puts Rainbow("Name: #{restaurant.name}""                                                       ─▄───────▄█▄───────▄─").gold
-   puts Rainbow("Address: #{restaurant.formatted_address}"" ▐█▌──▄──█████──▄──▐█▌").gold
-   puts Rainbow("Opening Hours: #{restaurant.opening_hours}                                  ""─█──███▄▄███▄▄███──█─").gold
-   puts Rainbow("Rating: #{restaurant.rating}                                                        ""░█░░█▄█▄█▀▒▀█▄█▄█░░█░").gold
-   puts Rainbow("User Ratings Total: #{restaurant.user_ratings_total}                                            ""██▄▄█▄█▄█▒▒▒█▄█▄█▄▄██").gold
+   puts Rainbow("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ 🍙🍱🍚🍣 #{restaurant.name} 🍜🍛🍥🍘 ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡").purple
+   puts Rainbow("─▄───────▄█▄───────▄─").gold
+   puts Rainbow("▐█▌──▄──█████──▄──▐█▌").gold
+   puts Rainbow("─█──███▄▄███▄▄███──█─").gold
+   puts Rainbow("░█░░█▄█▄█▀▒▀█▄█▄█░░█░").gold
+   puts Rainbow("██▄▄█▄█▄█▒▒▒█▄█▄█▄▄██").gold
+   puts Rainbow("Name: #{restaurant.name}").gold
+   puts Rainbow("Address: #{restaurant.formatted_address}").gold
+   puts Rainbow("Opening Hours: #{restaurant.opening_hours}").gold
+   puts Rainbow("Rating: #{restaurant.rating}").gold
+   puts Rainbow("User Ratings Total: #{restaurant.user_ratings_total}").gold
+   raining(1, 1)
    self.user_options
  end
  def self.user_options
-   raining(1, 1)
     puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").magenta  #, :background => :green) # line for spacing aesthetics
     puts Rainbow("║   Please type 'exit' followed by ENTER if you would like to exit the restaurant program     ║").magenta
     puts Rainbow("║                                                                                             ║").magenta
@@ -63,27 +68,44 @@ extend Animations
    end
  end
  def self.leave_restaurant_shelf
-   raining(6, 0.75)
    puts " "
-   puts Rainbow("                     Thank you for coming to my favorite japanese restaurants!").green
+   puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").green
+   puts Rainbow("║                   Thank you for coming to my favorite japanese restaurants!                 ║").green
+   puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").green
    puts " "
-   raining(6, 0.75)
+   panda(1, 3)
+   puts " "
+   puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").green
+   puts Rainbow("║                                Have a nice day! see you soon!                               ║").green
+   puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").green
+   puts " "
+   panda(1, 3)
+   building(1, 3)
    exit
  end
  def self.mystery
    # should be triggered by pressing 4-10 when prompted to input 2 or 11 for exit or choose again
-   kitchen(3, 1)
-   puts Rainbow("        0:  Why are you in the kitchen?! :O").red
-   raining(4, 1)
-   puts Rainbow("       You better get out of here! ").red
-   raining(4, 1)
-   puts Rainbow(          "Go back to looking for japanese restaurants!").red
+   kitchen(1, 4)
+   puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").red
+   puts Rainbow("║                            :O  Why are you in the kitchen?! :O                              ║").red
+   puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").red
+   chef(1, 4)
+   puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").red
+   puts Rainbow("║                               You better get out of here!                                   ║").red
+   puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").red
+   chef(1, 4)
+   puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").red
+   puts Rainbow("║                        Go back to looking for japanese restaurants!                         ║").red
+   puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").red
+   chef(1, 4)
  end
  def self.wrong_selection
    # if input = 11..# anything not 2 or 3 - and above 10 and symbols and letters etc
     #  raining(2, 0.75)
      puts " "
-     puts Rainbow("                      you made an invalid selection, sorry try again                 ").blue
+     puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").blue
+     puts Rainbow("║                      you made an invalid selection, sorry try again                         ║").blue
+     puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").blue
      puts " "
      self.user_options
  end

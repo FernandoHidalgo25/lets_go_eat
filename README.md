@@ -1,37 +1,40 @@
 # LetsGoEat
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lets_go_eat`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my CLI Project where you will find a list of 10 japanese restaurants
 
 ## Installation
 
-Add this line to your application's Gemfile:
+1. cd lets_go_eat
+2. bundle
+3. add folder: config
+4. add file: key.rb
+5. write in the key.rb
+module Key
 
-```ruby
-gem 'lets_go_eat'
-```
+def self.access_key
+  "(secret google maps API key)"*
+end
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install lets_go_eat
+end
+* ask for a google maps API key or create your own API key
 
 ## Usage
 
-TODO: Write usage instructions here
+You will have access a 10 japanese restaurants and for each restaurant you can see the following details:
+    -Name
+    -Address
+    -Opening hours
+    -Rating
+    -User ratings total
+There are different fun designs and also a hidden command if you enter kitchen after the description of any of the restaurants as well as when you exit you will find a nice panda :D
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After doing each step from the installation then just follow the instructions I hope you have fun in this interactive CLI.
 
 ## Contributing
 
+Thanks to Cat and Andrew for all your help and patience!
 Bug reports and pull requests are welcome on GitHub at https://github.com/'beneficial-widget-9188'/lets_go_eat. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
