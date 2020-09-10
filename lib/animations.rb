@@ -1,7 +1,5 @@
 module Animations
 
-    require 'rainbow'
-
     def raining(n, a)
         while n > 0
           puts Rainbow("          ╔═════════════════════════════════════════════════════════════════╗").yellow

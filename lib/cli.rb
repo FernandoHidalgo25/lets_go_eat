@@ -1,6 +1,7 @@
 class CLI
-require 'rainbow'
+#require 'rainbow'
 require_relative './animations.rb'
+
 extend Animations
   # this CLI (Command Line Interface) class contains the user input/output methods
   def self.list_restaurants
@@ -8,9 +9,10 @@ extend Animations
     puts Rainbow("║                                      ようこそ!                                              ║").blue
     puts Rainbow("╚═════════════════════════════════════════════════════════════════════════════════════════════╝").blue
     Restaurants.all.each_with_index do |restaurant, n| # and outputs an indexed list of my restaurantshelf restaurant titles
+#
       puts Rainbow("#{n + 1}. #{restaurant.name}").green
     end
-        self.choose_a_restaurant # calls the chose_a_restaurant class method from the CLI class
+        self.choose_a_restaurant # calls the choose_a_restaurant class method from the CLI class
   end
   # this class method requests the user input a number to select a restaurant title in order to
  def self.choose_a_restaurant # see more details about the restaurants on the restaurantshelf
@@ -29,8 +31,9 @@ extend Animations
  end
 
  def self.restaurant
-   @@restaurant
+   @@restaurant #class variable
  end
+
  def self.get_restaurant_details(restaurant)
    raining(1, 1)
    puts ""
@@ -48,6 +51,7 @@ extend Animations
    raining(1, 1)
    self.user_options
  end
+
  def self.user_options
     puts Rainbow("╔═════════════════════════════════════════════════════════════════════════════════════════════╗").magenta  #, :background => :green) # line for spacing aesthetics
     puts Rainbow("║   Please type 'exit' followed by ENTER if you would like to exit the restaurant program     ║").magenta
